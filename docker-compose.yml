@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  dockerdemo:
+    ports:
+      - 8088:80
+    image: ${DOCKER_REGISTRY-}dockerdemo
+    build:
+      context: .\DockerDemo
+      dockerfile: Dockerfile
+    environment:
+      ASPNET_ENVIRONMENT: "${ASPNET_ENVIRONMENT}"
